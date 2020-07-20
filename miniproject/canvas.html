@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="500" style="border:1px solid green;"></canvas>
+    <script>
+        var x=0,y=0,w=50,h=50,x1=50;
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(x, y, w, h);
+        function move(){
+            if(y<=250){
+                ctx.clearRect(x,y,w,h);
+                //x+=5;
+                y+=5;
+                ctx.fillRect(x, y, w, h);
+            }
+            else{
+                ctx.clearRect(x1,y,w,h);
+                y-=5;
+                ctx.fillRect(x1, y, w, h);
+            }
+        }
+        setInterval(move,100);
+    </script>
+</body>
+</html>
